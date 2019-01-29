@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shopping-app';
+  currentTab: string = 'recipes';
+
+  constructor() {
+  }
+
+  switchedToTab(tab) {
+    this.currentTab = tab;
+  }
 }
