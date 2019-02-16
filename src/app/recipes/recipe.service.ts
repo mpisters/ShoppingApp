@@ -9,7 +9,7 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe('test', 'lipsum', 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/reci' +
-      'pe-image/2018/02/easter-nest-cake.jpg?itok=-ZAZCCss', [new Ingredient('butter' ,200), new Ingredient('bread', 1)]),
+      'pe-image/2018/02/easter-nest-cake.jpg?itok=-ZAZCCss', [new Ingredient('butter' , 200), new Ingredient('bread', 1)]),
     new Recipe('test2', 'lipsum2', 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/reci' +
       'pe-image/2018/02/easter-nest-cake.jpg?itok=-ZAZCCss', [new Ingredient('sugar', 100), new Ingredient('salt', 50)])
 
@@ -18,7 +18,11 @@ export class RecipeService {
   constructor() {
   }
 
-  getRecipes() {
+  getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  getRecipe(id: number): Recipe {
+    return this.recipes[id];
   }
 }
